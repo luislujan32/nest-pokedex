@@ -9,8 +9,14 @@ async function bootstrap() {
 
   app.useGlobalPipes(
     new ValidationPipe({
+      // Permite validar los campos que estan en el dto correspondiente sin dejar pasar parametros no permitidos
       whitelist: true,
       forbidNonWhitelisted: true,
+      // Transforma los que me viene en el query (string) al tipo de dato que espero en el dto correspondiente
+      transform: true,
+      transformOptions: {
+        enableImplicitConversion: true,
+      },
     }),
   );
 
