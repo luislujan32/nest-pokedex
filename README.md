@@ -23,6 +23,12 @@ npm i -g @nestjs/cli
 docker-compose up -d
 ```
 
+5. Fullfill BD con Seed
+
+```
+localhost:5000/api/v2/seed
+```
+
 ## Stack usado
 
 - MongoDB
