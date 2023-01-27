@@ -23,7 +23,15 @@ npm i -g @nestjs/cli
 docker-compose up -d
 ```
 
-5. Fullfill BD con Seed
+5. Clonar el archivo `.env.template` y renombrar a `.env` y llenar las variables definidas
+
+6. Ejecutar la aplicacion en dev:
+
+```
+yarn start:dev
+```
+
+## Fullfill BD con Seed
 
 ```
 localhost:5000/api/v2/seed
@@ -33,3 +41,19 @@ localhost:5000/api/v2/seed
 
 - MongoDB
 - Nest
+
+# Production Build
+
+1. Crear el archivo .env.prod
+2. Llenar las variables de entorno de prod
+3. Crear la nueva imagen
+
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
+
+4. Conectar servicio
+
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up -d
+```
